@@ -40,7 +40,10 @@ struct TopContent: View {
                     .padding()
                 Spacer()
                 Button{
-                    iscategoryClicked.toggle()
+                    withAnimation {
+                        iscategoryClicked.toggle()
+                    }
+                    
                 }label: {
                     Text("카테고리")
                         .foregroundColor(.white)

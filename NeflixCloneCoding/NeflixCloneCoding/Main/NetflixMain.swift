@@ -27,9 +27,12 @@ struct NetflixMain: View {
                         TopContent(iscategoryClicked: $iscategoryClicked)
                         Spacer()
                     }
+                    
                 }
             }
-            
+            if iscategoryClicked{
+                CategoryselectionView(iscategoryClicked: $iscategoryClicked)
+            }
             
         }
         .ignoresSafeArea()

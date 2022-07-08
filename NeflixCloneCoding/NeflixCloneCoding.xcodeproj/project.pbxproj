@@ -14,6 +14,7 @@
 		78268AA8287016D90099F75C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78268AA7287016D90099F75C /* Storage.swift */; };
 		78AF389F2877033E00BA81D4 /* NetflixMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF389E2877033E00BA81D4 /* NetflixMain.swift */; };
 		78AF38A328770BE700BA81D4 /* TopContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A228770BE700BA81D4 /* TopContent.swift */; };
+		78AF38A72878798600BA81D4 /* CategoryselectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A62878798600BA81D4 /* CategoryselectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		78268AA7287016D90099F75C /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		78AF389E2877033E00BA81D4 /* NetflixMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMain.swift; sourceTree = "<group>"; };
 		78AF38A228770BE700BA81D4 /* TopContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContent.swift; sourceTree = "<group>"; };
+		78AF38A62878798600BA81D4 /* CategoryselectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryselectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				78AF389E2877033E00BA81D4 /* NetflixMain.swift */,
 				78AF38A228770BE700BA81D4 /* TopContent.swift */,
+				78AF38A62878798600BA81D4 /* CategoryselectionView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				78268A9C287016BB0099F75C /* ContentView.swift in Sources */,
 				78268A9A287016BB0099F75C /* NeflixCloneCodingApp.swift in Sources */,
 				78AF38A328770BE700BA81D4 /* TopContent.swift in Sources */,
+				78AF38A72878798600BA81D4 /* CategoryselectionView.swift in Sources */,
 				78268AA8287016D90099F75C /* Storage.swift in Sources */,
 				78AF389F2877033E00BA81D4 /* NetflixMain.swift in Sources */,
 			);
