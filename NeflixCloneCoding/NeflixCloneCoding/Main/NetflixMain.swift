@@ -8,27 +8,27 @@
 import SwiftUI
 
 struct NetflixMain: View {
+    @State var iscategoryClicked = false
     var body: some View {
         ZStack{
             Color.black
             ScrollView{
                 ZStack{
-                VStack{
-                    Image("MainTitle")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
-                }
+                    //main content 들어가야되는 부분
                     VStack{
-                        TopContent()
+                        Image("MainTitle")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
+                        
+                    }
+                    //상단바를 위한 스택
+                    VStack{
+                        TopContent(iscategoryClicked: $iscategoryClicked)
                         Spacer()
                     }
                 }
             }
-                
-                
-                Spacer()
-            
             
             
         }

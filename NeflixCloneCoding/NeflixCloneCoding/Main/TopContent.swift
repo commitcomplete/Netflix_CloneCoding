@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopContent: View {
+    @Binding var iscategoryClicked : Bool
     var body: some View {
         VStack(spacing : 0){
             HStack{
@@ -39,7 +40,7 @@ struct TopContent: View {
                     .padding()
                 Spacer()
                 Button{
-                    
+                    iscategoryClicked.toggle()
                 }label: {
                     Text("카테고리")
                         .foregroundColor(.white)
@@ -55,8 +56,4 @@ struct TopContent: View {
     }
 }
 
-struct TopContent_Previews: PreviewProvider {
-    static var previews: some View {
-        TopContent()
-    }
-}
+
