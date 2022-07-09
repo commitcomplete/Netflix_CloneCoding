@@ -13,8 +13,13 @@ struct ContentDetailView: View {
             Color.black
                 .ignoresSafeArea()
             
-            VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 TopRoundedRectangle(radius: 13, height: 220)
+                
+                Text("이상한 나라의 수학자")
+                    .font(.system(size: 16))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 10)
                 
                 Spacer()
             }
