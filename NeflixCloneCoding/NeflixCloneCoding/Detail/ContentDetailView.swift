@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentDetailView: View {
+    var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 7), count: 3)
+    
     var body: some View {
         ZStack {
             Color.black
@@ -64,6 +66,15 @@ struct ContentDetailView: View {
                     }
                     .padding(.horizontal, 12)
                     .padding(.top, 10)
+                    
+                    LazyVGrid(columns: columns, spacing: 7) {
+                        ForEach((0...5), id: \.self) { _ in
+                            RoundedRectangle(cornerRadius: 4)
+                                .frame(height: 174)
+                        }
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.top, 16)
                 }
             }
         }
