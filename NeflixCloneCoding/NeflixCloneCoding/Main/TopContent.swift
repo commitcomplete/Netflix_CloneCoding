@@ -28,7 +28,7 @@ struct TopContent: View {
                     
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.13, alignment: .bottom)
-            .background(.black.opacity(0.4))
+//            .background(.black.opacity(0.4))
             HStack{
                 Spacer()
                 Text("시리즈")
@@ -53,7 +53,7 @@ struct TopContent: View {
                 Spacer()
             }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.06, alignment: .leading)
-                .background(.black.opacity(0.2))
+//                .background(.black.opacity(0.2))
             
         }
     }

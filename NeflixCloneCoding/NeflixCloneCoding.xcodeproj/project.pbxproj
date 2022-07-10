@@ -15,6 +15,8 @@
 		78AF389F2877033E00BA81D4 /* NetflixMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF389E2877033E00BA81D4 /* NetflixMain.swift */; };
 		78AF38A328770BE700BA81D4 /* TopContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A228770BE700BA81D4 /* TopContent.swift */; };
 		78AF38A72878798600BA81D4 /* CategoryselectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A62878798600BA81D4 /* CategoryselectionView.swift */; };
+		78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A9287A9BA600BA81D4 /* MainPoster.swift */; };
+		78AF38B2287A9FBC00BA81D4 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		78AF389E2877033E00BA81D4 /* NetflixMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMain.swift; sourceTree = "<group>"; };
 		78AF38A228770BE700BA81D4 /* TopContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContent.swift; sourceTree = "<group>"; };
 		78AF38A62878798600BA81D4 /* CategoryselectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryselectionView.swift; sourceTree = "<group>"; };
+		78AF38A9287A9BA600BA81D4 /* MainPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPoster.swift; sourceTree = "<group>"; };
+		78AF38AD287A9EA600BA81D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,8 @@
 		78268A98287016BB0099F75C /* NeflixCloneCoding */ = {
 			isa = PBXGroup;
 			children = (
+				78AF38AD287A9EA600BA81D4 /* Info.plist */,
+				78AF38AB287A9E7400BA81D4 /* fonts */,
 				7862CCDB2875B0DA00FE3545 /* Main */,
 				78268A99287016BB0099F75C /* NeflixCloneCodingApp.swift */,
 				78268A9B287016BB0099F75C /* ContentView.swift */,
@@ -83,8 +90,17 @@
 				78AF389E2877033E00BA81D4 /* NetflixMain.swift */,
 				78AF38A228770BE700BA81D4 /* TopContent.swift */,
 				78AF38A62878798600BA81D4 /* CategoryselectionView.swift */,
+				78AF38A9287A9BA600BA81D4 /* MainPoster.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		78AF38AB287A9E7400BA81D4 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78268AA1287016BC0099F75C /* Preview Assets.xcassets in Resources */,
+				78AF38B2287A9FBC00BA81D4 /* BebasNeue.otf in Resources */,
 				78268A9E287016BC0099F75C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78268A9C287016BB0099F75C /* ContentView.swift in Sources */,
+				78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */,
 				78268A9A287016BB0099F75C /* NeflixCloneCodingApp.swift in Sources */,
 				78AF38A328770BE700BA81D4 /* TopContent.swift in Sources */,
 				78AF38A72878798600BA81D4 /* CategoryselectionView.swift in Sources */,
@@ -294,6 +312,7 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NeflixCloneCoding/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -323,6 +342,7 @@
 				DEVELOPMENT_TEAM = MSUF83HQ8R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NeflixCloneCoding/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -14,30 +14,81 @@ struct NetflixMain: View {
     }
     var body: some View {
         
-        
+        ZStack{
         TabView{
             ZStack{
                 Color.black
                 ScrollView{
                     ZStack{
-                        //main content 들어가야되는 부분
+                        //main Poster 이미지 들어가는 부분
                         VStack{
-                            Image("MainTitle")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
+                           MainPoster(posterName: "MainTitle",movieName: "Toy Story3")
+        
                             
                         }
-                        //상단바를 위한 스택
+                        //상단컴포넌트를 위한 스택
                         VStack{
+                            //상단 탭바
                             TopContent(iscategoryClicked: $iscategoryClicked)
+                            //영화 제목
+                            Text("Toy Story3")
+                                .font(.custom("BebasNeue", size: 80))
+                                .foregroundColor(.white)
+                                .padding(.top,UIScreen.main.bounds.height * 0.2)
+                            // 영화 카테고리
+                            HStack{
+                                Text("Friendship  *")
+                                    .font(.custom("BebasNeue", size: 20))
+                                    .foregroundColor(.white)
+                                Text("Romance  *")
+                                    .font(.custom("BebasNeue", size: 20))
+                                    .foregroundColor(.white)
+                                Text("  SF")
+                                    .font(.custom("BebasNeue", size: 20))
+                                    .foregroundColor(.white)
+
+                            }
+                            //추가 버튼들
+                            HStack{
+                                Spacer()
+                                VStack{
+                                    Image(systemName: "plus")
+                                        .foregroundColor(.white)
+                                    Text("내가 찜한 콘텐츠")
+                                        .font(.caption)
+                                        .foregroundColor(.white)
+                                }
+                                Spacer()
+                                HStack{
+                                    Image(systemName:"play.fill")
+                                        .foregroundColor(.black)
+                                    Text("재생")
+                                        .font(.caption)
+                                        .foregroundColor(.black)
+                                }
+                                .padding(.vertical,5)
+                                    .padding(.horizontal)
+                                .background(.white)
+                                .cornerRadius(5)
+                                .padding(.trailing,20)
+                                Spacer()
+                                Button{
+                                    
+                                }label: {
+                                    VStack{
+                                        Image(systemName: "info.circle")
+                                            .foregroundColor(.white)
+                                        Text("정보")
+                                            .font(.caption)
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                                Spacer()
+                            }
                             Spacer()
                         }
                         
                     }
-                }
-                if iscategoryClicked{
-                    CategoryselectionView(iscategoryClicked: $iscategoryClicked)
                 }
                 
             }
@@ -63,7 +114,10 @@ struct NetflixMain: View {
             }
         }
         .accentColor(.white)
-        
+        if iscategoryClicked{
+            CategoryselectionView(iscategoryClicked: $iscategoryClicked)
+        }
+        }
     }
 }
 
