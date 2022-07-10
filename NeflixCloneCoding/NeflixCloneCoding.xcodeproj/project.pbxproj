@@ -17,6 +17,7 @@
 		78AF38A72878798600BA81D4 /* CategoryselectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A62878798600BA81D4 /* CategoryselectionView.swift */; };
 		78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38A9287A9BA600BA81D4 /* MainPoster.swift */; };
 		78AF38B2287A9FBC00BA81D4 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */; };
+		78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		78AF38A9287A9BA600BA81D4 /* MainPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPoster.swift; sourceTree = "<group>"; };
 		78AF38AD287A9EA600BA81D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
+		78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMovieList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				78AF38A228770BE700BA81D4 /* TopContent.swift */,
 				78AF38A62878798600BA81D4 /* CategoryselectionView.swift */,
 				78AF38A9287A9BA600BA81D4 /* MainPoster.swift */,
+				78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78268A9C287016BB0099F75C /* ContentView.swift in Sources */,
+				78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */,
 				78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */,
 				78268A9A287016BB0099F75C /* NeflixCloneCodingApp.swift in Sources */,
 				78AF38A328770BE700BA81D4 /* TopContent.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NetflixMain: View {
     @State var iscategoryClicked = false
+    var categoryList = ["미국 블록버스터 영화","심리 게임 영화","실화 바탕 영화","인디 영화","오늘 대한민국의 Top 10 영화","호러 영화"]
     init(){
         UITabBar.appearance().barTintColor = .black
     }
@@ -23,7 +24,10 @@ struct NetflixMain: View {
                         //main Poster 이미지 들어가는 부분
                         VStack{
                            MainPoster(posterName: "MainTitle",movieName: "Toy Story3")
-        
+                                .padding(.bottom,80)
+                            ForEach(categoryList,id:\.self){category in
+                                RowMovieList(categoryName: category)
+                            }
                             
                         }
                         //상단컴포넌트를 위한 스택
