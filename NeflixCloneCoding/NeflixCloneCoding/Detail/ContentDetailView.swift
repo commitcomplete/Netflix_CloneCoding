@@ -26,6 +26,44 @@ struct ContentDetailView: View {
                             .padding(.horizontal, 10)
                             .padding(.vertical, 12)
                         
+                        Button(action: {}, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 4)
+                                    .frame(height: 35)
+                                    .foregroundColor(.white)
+                                
+                                HStack(spacing: 0) {
+                                    Image(systemName: "play.fill")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 6)
+                                    
+                                    Text("재생")
+                                        .font(.system(size: 16))
+                                        .foregroundColor(.black)
+                                }
+                            }
+                        })
+                        .padding(.horizontal, 10)
+                        
+                        Button(action: {}, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 4)
+                                    .frame(height: 35)
+                                    .foregroundColor(.white)
+                                
+                                HStack(spacing: 0) {
+                                    Image(systemName: "play.fill")
+                                        .foregroundColor(.black)
+                                        .padding(.trailing, 6)
+                                    
+                                    Text("재생")
+                                        .font(.system(size: 16))
+                                        .foregroundColor(.black)
+                                }
+                            }
+                        })
+                        .padding(.horizontal, 10)
+                        
                         Text("학업과 재정 측면에서 어려움을 겪고 있는 학생. 학교 경비원에게 수학을 가르쳐 달라고 요청한다. 그리고 성적보다 훨씬 더 많은 것을 얻게 되는데.")
                             .font(.system(size: 13))
                             .padding(.horizontal, 10)
@@ -122,7 +160,7 @@ struct ContentDetailView: View {
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ContentDetailView()
-            .previewDevice("iPhone 13 Pro")
+            .previewDevice("iPhone 13 Pro Max")
     }
 }
 
