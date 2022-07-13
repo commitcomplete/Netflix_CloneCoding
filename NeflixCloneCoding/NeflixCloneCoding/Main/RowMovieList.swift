@@ -34,9 +34,16 @@ struct RowMovieList: View {
                             
                         }
                         else{
-                            Image(posterList[index])
-                                .resizable()
-                                .frame(width: UIScreen.main.bounds.width*0.4, height: UIScreen.main.bounds.height*0.3, alignment: .center)
+                            NavigationLink {
+                                ContentDetailView()
+                                    .navigationBarTitleDisplayMode(.inline) //this must be empty
+                            } label: {
+                                Image(posterList[index])
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.width*0.4, height: UIScreen.main.bounds.height*0.3, alignment: .center)
+                            }
+
+                            
                         }
                     }
                     

@@ -12,10 +12,18 @@ struct MainPoster: View {
     var movieName : String
     var body: some View {
         ZStack{
-            Image(posterName)
-                .resizable()
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
+            NavigationLink {
+                ContentDetailView()
+                    .navigationBarTitleDisplayMode(.inline) //this must be empty
+            
+            } label: {
+                Image(posterName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
+            }
+
+            
             
                 
         }
