@@ -93,8 +93,22 @@ struct ContentDetailView: View {
                                 .fill(Color.grayButton)
                                 .frame(width: 30, height: 30)
                             
+                            Image(systemName: "airplayvideo")
+                                .foregroundColor(.white)
+                                .font(.system(size: 14))
+                        }
+                    })
+                    .padding(.trailing, 13)
+                    
+                    Button(action: {}, label: {
+                        ZStack {
+                            Circle()
+                                .fill(Color.grayButton)
+                                .frame(width: 30, height: 30)
+                            
                             Image(systemName: "xmark")
                                 .foregroundColor(.white)
+                                .font(.system(size: 17))
                         }
                     })
                 }
