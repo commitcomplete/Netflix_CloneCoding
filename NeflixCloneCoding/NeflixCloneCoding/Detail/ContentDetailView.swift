@@ -21,49 +21,54 @@ struct ContentDetailView: View {
                         TopRoundedRectangleImage(radius: 13, height: 220, imageName: "MainTitle")
                         
                         Text("이상한 나라의 수학자")
-                            .font(.system(size: 16))
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 10)
+                            .font(.system(size: 17, weight: .semibold))
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 12)
                         
                         Text("학업과 재정 측면에서 어려움을 겪고 있는 학생. 학교 경비원에게 수학을 가르쳐 달라고 요청한다. 그리고 성적보다 훨씬 더 많은 것을 얻게 되는데.")
-                            .font(.system(size: 12))
-                            .padding(.horizontal, 8)
+                            .font(.system(size: 13))
+                            .padding(.horizontal, 10)
                         
                         HStack(spacing: 0) {
                             Text("출연: ")
-                                .font(.system(size: 10))
+                                .font(.system(size: 11))
+                                .foregroundColor(.secondary)
                             
                             Text("최민식, 김동회, 박병은 ...")
-                                .font(.system(size: 10))
+                                .font(.system(size: 11))
+                                .foregroundColor(.secondary)
                             
                             Button(action: {}, label: {
                                 Text("더보기")
-                                    .font(.system(size: 10))
+                                    .font(.system(size: 11))
                                     .fontWeight(.semibold)
                                     .foregroundColor(.secondary)
                             })
                         }
-                        .padding(.horizontal, 8)
+                        .padding(.horizontal, 10)
                         .padding(.top, 10)
                         
                         HStack(spacing: 0) {
                             Text("감독: ")
-                                .font(.system(size: 10))
+                                .font(.system(size: 11))
+                                .foregroundColor(.secondary)
                             
                             Text("박동훈")
-                                .font(.system(size: 10))
+                                .font(.system(size: 11))
+                                .foregroundColor(.secondary)
                         }
-                        .padding(.horizontal, 8)
+                        .padding(.horizontal, 10)
                         .padding(.top, 4)
                         
                         VStack(alignment: .leading, spacing: 0) {
                             Rectangle()
                                 .fill(.red)
-                                .frame(maxWidth: 97, maxHeight: 4)
+                                .frame(maxWidth: 105, maxHeight: 4)
                             
                             Text("함께 시청된 컨텐츠")
-                                .font(.system(size: 13, weight: .semibold))
-                                .padding(.top, 10)
+                                .font(.system(size: 14, weight: .semibold))
+                                .padding(.top, 12)
                         }
                         .padding(.horizontal, 12)
                         .padding(.top, 10)
@@ -77,7 +82,7 @@ struct ContentDetailView: View {
                             }
                         }
                         .padding(.horizontal, 8)
-                        .padding(.top, 16)
+                        .padding(.top, 20)
                     }
                 }
                 
@@ -93,7 +98,7 @@ struct ContentDetailView: View {
                         }
                     })
                 }
-                .padding(8)
+                .padding(10)
             }
             .preferredColorScheme(.dark)
         }
