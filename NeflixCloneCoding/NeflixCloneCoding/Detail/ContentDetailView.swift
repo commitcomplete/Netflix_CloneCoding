@@ -18,9 +18,11 @@ struct ContentDetailView: View {
             ZStack(alignment: .topTrailing) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
-                        Image("MainTitle")
+                        Image("stll")
                             .resizable()
+                            .scaledToFill()
                             .frame(height: 220)
+                            .clipped()
                         
                         Text("이상한 나라의 수학자")
                             .font(.system(size: 17, weight: .semibold))
