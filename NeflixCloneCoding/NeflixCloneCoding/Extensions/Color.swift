@@ -10,6 +10,8 @@ import SwiftUI
 
 extension Color {
     static let grayButton = Color(hex: "#292929")
+    static let grayBackground = Color(hex: "#2B2B2B")
+    static let secondGrayButton = Color(hex: "#555555")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)

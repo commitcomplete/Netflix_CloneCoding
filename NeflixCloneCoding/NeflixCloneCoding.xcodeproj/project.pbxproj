@@ -26,6 +26,7 @@
 		B9CE517D28857E53002034E0 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE517C28857E53002034E0 /* Storage.swift */; };
 		B9CE518228858DE1002034E0 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = B9CE518128858DE1002034E0 /* NavigationStack */; };
 		B9CE518428858E6B002034E0 /* ContentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE518328858E6B002034E0 /* ContentRootView.swift */; };
+		B9CE5186288593BC002034E0 /* ContentInfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE5185288593BC002034E0 /* ContentInfomationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B919C98B287EB44D00EB9D42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B9CE517C28857E53002034E0 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B9CE518328858E6B002034E0 /* ContentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRootView.swift; sourceTree = "<group>"; };
+		B9CE5185288593BC002034E0 /* ContentInfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInfomationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				B9CE518328858E6B002034E0 /* ContentRootView.swift */,
 				B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */,
+				B9CE5185288593BC002034E0 /* ContentInfomationView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CE5186288593BC002034E0 /* ContentInfomationView.swift in Sources */,
 				78268A9C287016BB0099F75C /* ContentView.swift in Sources */,
 				B9CE518428858E6B002034E0 /* ContentRootView.swift in Sources */,
 				B9CE517D28857E53002034E0 /* Storage.swift in Sources */,

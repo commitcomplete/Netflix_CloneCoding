@@ -11,6 +11,7 @@ import NavigationStack
 struct ContentRootView: View {
     @Binding var showingSheet: Bool
     @State private var isActive = false
+    @State private var isModalPresented = false
     
     var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 7), count: 3)
     
@@ -88,7 +89,9 @@ struct ContentRootView: View {
                                     .font(.system(size: 11))
                                     .foregroundColor(.secondary)
                                 
-                                Button(action: {}, label: {
+                                Button(action: {
+                                    isModalPresented.toggle()
+                                }, label: {
                                     Text("더보기")
                                         .font(.system(size: 11))
                                         .fontWeight(.semibold)
@@ -205,6 +208,9 @@ struct ContentRootView: View {
                                     .font(.system(size: 17))
                             }
                         })
+                    }
+                    .sheet(isPresented: $isModalPresented) {
+                        ContentInfomationView(isModalPresent: $isModalPresented)
                     }
                     .padding(10)
                 }
