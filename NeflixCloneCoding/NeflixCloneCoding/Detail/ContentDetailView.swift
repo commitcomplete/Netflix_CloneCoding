@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct ContentDetailView: View {
     @Binding var showingSheet: Bool
@@ -170,6 +171,23 @@ struct ContentDetailView: View {
                 }
                 
                 HStack(spacing: 0) {
+                    Button(action: {}, label: {
+                        PopView {
+                            ZStack {
+                                Circle()
+                                    .fill(Color.grayButton)
+                                    .frame(width: 30, height: 30)
+                                
+                                Image(systemName: "chevron.backward")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14))
+                            }
+                        }
+                    })
+                    .padding(.trailing, 13)
+                    
+                    Spacer()
+                    
                     Button(action: {}, label: {
                         ZStack {
                             Circle()
