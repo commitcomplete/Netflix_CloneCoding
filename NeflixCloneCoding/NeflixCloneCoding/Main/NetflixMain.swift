@@ -12,10 +12,11 @@ struct NetflixMain: View {
     var categoryList = ["미국 블록버스터 영화","심리 게임 영화","실화 바탕 영화","인디 영화","오늘 대한민국의 Top 10 영화","호러 영화"]
     init(){
         UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().backgroundColor = .black
     }
     var body: some View {
-        
         ZStack{
+            NavigationView{
         TabView{
             ZStack{
                 Color.black
@@ -118,10 +119,14 @@ struct NetflixMain: View {
             }
         }
         .accentColor(.white)
+        }
         if iscategoryClicked{
             CategoryselectionView(iscategoryClicked: $iscategoryClicked)
         }
         }
+            
+        
+       
     }
 }
 
