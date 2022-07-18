@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentDetailView: View {
+    @Binding var showingSheet: Bool
+    
     var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 7), count: 3)
     
     var body: some View {
@@ -181,7 +183,9 @@ struct ContentDetailView: View {
                     })
                     .padding(.trailing, 13)
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        showingSheet.toggle()
+                    }, label: {
                         ZStack {
                             Circle()
                                 .fill(Color.grayButton)
@@ -197,12 +201,5 @@ struct ContentDetailView: View {
             }
             .preferredColorScheme(.dark)
         }
-    }
-}
-
-struct ContentDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentDetailView()
-            .previewDevice("iPhone 13 Pro Max")
     }
 }
