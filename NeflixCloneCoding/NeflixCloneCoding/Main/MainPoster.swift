@@ -8,29 +8,33 @@
 import SwiftUI
 
 struct MainPoster: View {
+    @EnvironmentObject var viewModel: ViewModel
     var posterName : String
     var movieName : String
+    var toystory2 = "http://file.koreafilm.or.kr/thm/02/00/01/61/tn_DPF002688.JPG"
     var body: some View {
         ZStack{
-            NavigationLink {
-                ContentDetailView()
-                    .navigationBarTitleDisplayMode(.inline) //this must be empty
             
-            } label: {
-                Image(posterName)
-                    .resizable()
-                    .scaledToFill()
+                AsyncImage(url: URL(string: viewModel.mainPosterImageUrl)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Color.gray
+                }
                     .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
-            }
+            
 
             
             
                 
         }
         .mask(LinearGradient(gradient: Gradient(colors: [.clear, .black, .black, .black,.clear]), startPoint: .top, endPoint: .bottom))
-
+        .onAppear(){
+            viewModel.getmoviePoster()
+        }
         
     }
+    
+   
 }
 
 struct MainPoster_Previews: PreviewProvider {
