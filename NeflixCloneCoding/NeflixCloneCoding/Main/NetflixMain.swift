@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct NetflixMain: View {
+    @EnvironmentObject var viewModel: ViewModel
     @State var iscategoryClicked = false
+    
+    @State private var showingSheet = false
+    
     var categoryList = ["미국 블록버스터 영화","심리 게임 영화","실화 바탕 영화","인디 영화","오늘 대한민국의 Top 10 영화","호러 영화"]
     init(){
         UITabBar.appearance().barTintColor = .black
@@ -16,7 +20,6 @@ struct NetflixMain: View {
     }
     var body: some View {
         ZStack{
-            NavigationView{
         TabView{
             ZStack{
                 Color.black
@@ -24,8 +27,12 @@ struct NetflixMain: View {
                     ZStack{
                         //main Poster 이미지 들어가는 부분
                         VStack{
-                           MainPoster(posterName: "MainTitle",movieName: "Toy Story3")
-                                .padding(.bottom,80)
+                            Button{
+                                self.showingSheet.toggle()
+                            }label: {
+                                MainPoster(posterName: "MainTitle",movieName: "Toy Story2")
+                                     .padding(.bottom,80)
+                            }
                             ForEach(categoryList,id:\.self){category in
                                 RowMovieList(categoryName: category)
                             }
@@ -36,10 +43,15 @@ struct NetflixMain: View {
                             //상단 탭바
                             TopContent(iscategoryClicked: $iscategoryClicked)
                             //영화 제목
-                            Text("Toy Story3")
-                                .font(.custom("BebasNeue", size: 80))
-                                .foregroundColor(.white)
-                                .padding(.top,UIScreen.main.bounds.height * 0.2)
+                           
+                              
+                            
+                                Text("Toy Story2")
+                                    .font(.custom("BebasNeue", size: 80))
+                                    .foregroundColor(.white)
+                                    .padding(.top,UIScreen.main.bounds.height * 0.2)
+                            
+                            
                             // 영화 카테고리
                             HStack{
                                 Text("Friendship  *")
@@ -95,6 +107,10 @@ struct NetflixMain: View {
                         
                     }
                 }
+                .sheet(isPresented: $showingSheet) {
+                         //sheet에 표시될 뷰를 할당
+                            ContentDetailView()
+                        }
                 
             }
             .ignoresSafeArea()
@@ -119,7 +135,7 @@ struct NetflixMain: View {
             }
         }
         .accentColor(.white)
-        }
+        
         if iscategoryClicked{
             CategoryselectionView(iscategoryClicked: $iscategoryClicked)
         }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7821D5EC287EEAB200ACDF65 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821D5EB287EEAB200ACDF65 /* ViewModel.swift */; };
+		7821D691287EFF6500ACDF65 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821D690287EFF6500ACDF65 /* MovieData.swift */; };
+		7821D693287F005C00ACDF65 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821D692287F005C00ACDF65 /* Data.swift */; };
+		7821D695287F00FA00ACDF65 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7821D694287F00FA00ACDF65 /* Result.swift */; };
 		78268A9A287016BB0099F75C /* NeflixCloneCodingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78268A99287016BB0099F75C /* NeflixCloneCodingApp.swift */; };
 		78268A9C287016BB0099F75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78268A9B287016BB0099F75C /* ContentView.swift */; };
 		78268A9E287016BC0099F75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78268A9D287016BC0099F75C /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7821D5EB287EEAB200ACDF65 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		7821D690287EFF6500ACDF65 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		7821D692287F005C00ACDF65 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		7821D694287F00FA00ACDF65 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		78268A96287016BB0099F75C /* NeflixCloneCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeflixCloneCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78268A99287016BB0099F75C /* NeflixCloneCodingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeflixCloneCodingApp.swift; sourceTree = "<group>"; };
 		78268A9B287016BB0099F75C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +55,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7821D5EA287EEAA300ACDF65 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7821D5EB287EEAB200ACDF65 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7821D5ED287EF1A500ACDF65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7821D690287EFF6500ACDF65 /* MovieData.swift */,
+				7821D692287F005C00ACDF65 /* Data.swift */,
+				7821D694287F00FA00ACDF65 /* Result.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		78268A8D287016BB0099F75C = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +92,8 @@
 		78268A98287016BB0099F75C /* NeflixCloneCoding */ = {
 			isa = PBXGroup;
 			children = (
+				7821D5ED287EF1A500ACDF65 /* Models */,
+				7821D5EA287EEAA300ACDF65 /* ViewModel */,
 				78AF38AD287A9EA600BA81D4 /* Info.plist */,
 				78AF38AB287A9E7400BA81D4 /* fonts */,
 				7862CCDB2875B0DA00FE3545 /* Main */,
@@ -186,12 +214,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				78268A9C287016BB0099F75C /* ContentView.swift in Sources */,
+				7821D5EC287EEAB200ACDF65 /* ViewModel.swift in Sources */,
 				78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */,
 				78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */,
+				7821D693287F005C00ACDF65 /* Data.swift in Sources */,
 				B919C987287DF5AA00EB9D42 /* ContentDetailView.swift in Sources */,
+				7821D695287F00FA00ACDF65 /* Result.swift in Sources */,
 				78268A9A287016BB0099F75C /* NeflixCloneCodingApp.swift in Sources */,
 				78AF38A328770BE700BA81D4 /* TopContent.swift in Sources */,
 				78AF38A72878798600BA81D4 /* CategoryselectionView.swift in Sources */,
+				7821D691287EFF6500ACDF65 /* MovieData.swift in Sources */,
 				78AF389F2877033E00BA81D4 /* NetflixMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
