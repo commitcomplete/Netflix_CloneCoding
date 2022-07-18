@@ -22,6 +22,8 @@
 		78AF38B2287A9FBC00BA81D4 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */; };
 		78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */; };
 		B919C987287DF5AA00EB9D42 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */; };
+		B919C989287DF62F00EB9D42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C988287DF62F00EB9D42 /* Storage.swift */; };
+		B919C98C287EB44D00EB9D42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C98B287EB44D00EB9D42 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMovieList.swift; sourceTree = "<group>"; };
 		B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		B919C988287DF62F00EB9D42 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B919C98B287EB44D00EB9D42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				B919C985287DF58500EB9D42 /* Detail */,
 				78268A99287016BB0099F75C /* NeflixCloneCodingApp.swift */,
 				78268A9B287016BB0099F75C /* ContentView.swift */,
+				B919C98A287EB41E00EB9D42 /* Extensions */,
 				78268A9D287016BC0099F75C /* Assets.xcassets */,
 				78268A9F287016BC0099F75C /* Preview Content */,
 			);
@@ -140,6 +145,14 @@
 				B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		B919C98A287EB41E00EB9D42 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B919C98B287EB44D00EB9D42 /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,7 @@
 				78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */,
 				78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */,
 				7821D693287F005C00ACDF65 /* Data.swift in Sources */,
+				B919C98C287EB44D00EB9D42 /* Color.swift in Sources */,
 				B919C987287DF5AA00EB9D42 /* ContentDetailView.swift in Sources */,
 				7821D695287F00FA00ACDF65 /* Result.swift in Sources */,
 				78268A9A287016BB0099F75C /* NeflixCloneCodingApp.swift in Sources */,
