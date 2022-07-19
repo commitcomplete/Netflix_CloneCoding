@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct ContentDetailView: View {
+    @Binding var showingSheet: Bool
+    @State var isModalPresented = false
+    
     var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 7), count: 3)
     
     var body: some View {
@@ -18,9 +22,11 @@ struct ContentDetailView: View {
             ZStack(alignment: .topTrailing) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
-                        Image("MainTitle")
+                        Image("stll")
                             .resizable()
+                            .scaledToFill()
                             .frame(height: 220)
+                            .clipped()
                         
                         Text("이상한 나라의 수학자")
                             .font(.system(size: 17, weight: .semibold))
@@ -81,7 +87,9 @@ struct ContentDetailView: View {
                                 .font(.system(size: 11))
                                 .foregroundColor(.secondary)
                             
-                            Button(action: {}, label: {
+                            Button(action: {
+                                isModalPresented.toggle()
+                            }, label: {
                                 Text("더보기")
                                     .font(.system(size: 11))
                                     .fontWeight(.semibold)
@@ -167,6 +175,23 @@ struct ContentDetailView: View {
                 
                 HStack(spacing: 0) {
                     Button(action: {}, label: {
+                        PopView {
+                            ZStack {
+                                Circle()
+                                    .fill(Color.grayButton)
+                                    .frame(width: 30, height: 30)
+                                
+                                Image(systemName: "chevron.backward")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14))
+                            }
+                        }
+                    })
+                    .padding(.trailing, 13)
+                    
+                    Spacer()
+                    
+                    Button(action: {}, label: {
                         ZStack {
                             Circle()
                                 .fill(Color.grayButton)
@@ -179,7 +204,9 @@ struct ContentDetailView: View {
                     })
                     .padding(.trailing, 13)
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        showingSheet.toggle()
+                    }, label: {
                         ZStack {
                             Circle()
                                 .fill(Color.grayButton)
@@ -191,16 +218,12 @@ struct ContentDetailView: View {
                         }
                     })
                 }
+                .sheet(isPresented: $isModalPresented) {
+                    ContentInfomationView(isModalPresent: $isModalPresented)
+                }
                 .padding(10)
             }
             .preferredColorScheme(.dark)
         }
-    }
-}
-
-struct ContentDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentDetailView()
-            .previewDevice("iPhone 13 Pro Max")
     }
 }
