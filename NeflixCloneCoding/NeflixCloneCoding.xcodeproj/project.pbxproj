@@ -25,6 +25,8 @@
 		78D8B0E328857E8300ADF830 /* RowMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B0E228857E8300ADF830 /* RowMovies.swift */; };
 		78D8B0E52885D57900ADF830 /* LoadData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D8B0E42885D57900ADF830 /* LoadData2.swift */; };
 		B919C987287DF5AA00EB9D42 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */; };
+		B919C989287DF62F00EB9D42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C988287DF62F00EB9D42 /* Storage.swift */; };
+		B919C98C287EB44D00EB9D42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C98B287EB44D00EB9D42 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		78D8B0E228857E8300ADF830 /* RowMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMovies.swift; sourceTree = "<group>"; };
 		78D8B0E42885D57900ADF830 /* LoadData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData2.swift; sourceTree = "<group>"; };
 		B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		B919C988287DF62F00EB9D42 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B919C98B287EB44D00EB9D42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				B919C985287DF58500EB9D42 /* Detail */,
 				78268A99287016BB0099F75C /* NeflixCloneCodingApp.swift */,
 				78268A9B287016BB0099F75C /* ContentView.swift */,
+				B919C98A287EB41E00EB9D42 /* Extensions */,
 				78268A9D287016BC0099F75C /* Assets.xcassets */,
 				78268A9F287016BC0099F75C /* Preview Content */,
 			);
@@ -149,6 +154,14 @@
 				B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		B919C98A287EB41E00EB9D42 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B919C98B287EB44D00EB9D42 /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +241,7 @@
 				78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */,
 				78D8B0E1288569BF00ADF830 /* ResultData.swift in Sources */,
 				7821D693287F005C00ACDF65 /* Data.swift in Sources */,
+				B919C98C287EB44D00EB9D42 /* Color.swift in Sources */,
 				B919C987287DF5AA00EB9D42 /* ContentDetailView.swift in Sources */,
 				78D8B0E52885D57900ADF830 /* LoadData2.swift in Sources */,
 				78D8B0E328857E8300ADF830 /* RowMovies.swift in Sources */,
