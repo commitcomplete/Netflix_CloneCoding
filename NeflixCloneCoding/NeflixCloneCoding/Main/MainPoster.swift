@@ -15,21 +15,17 @@ struct MainPoster: View {
     var body: some View {
         ZStack{
             
-                AsyncImage(url: URL(string: viewModel.mainPosterImageUrl)) { image in
+            AsyncImage(url: URL(string: viewModel.modelResultData.mainPosterUrl)) { image in
                     image.resizable()
                 } placeholder: {
                     Color.gray
                 }
-                    .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
+                .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.5, alignment: .center)
             
-
-            
-            
-                
         }
         .mask(LinearGradient(gradient: Gradient(colors: [.clear, .black, .black, .black,.clear]), startPoint: .top, endPoint: .bottom))
         .onAppear(){
-            viewModel.getmoviePoster()
+            
         }
         
     }
