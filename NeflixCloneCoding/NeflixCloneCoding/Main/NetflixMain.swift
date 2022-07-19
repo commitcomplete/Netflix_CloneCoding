@@ -114,7 +114,7 @@ struct NetflixMain: View {
                 }
                 .sheet(isPresented: $showingSheet) {
                          //sheet에 표시될 뷰를 할당
-                            ContentDetailView()
+                    ContentRootView(showingSheet: $showingSheet)
                         }
                 
             }
