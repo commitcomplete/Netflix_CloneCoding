@@ -10,7 +10,6 @@ import SwiftUI
 struct CategoryselectionView: View {
     var categoryList = ["모든 카테고리","저장 가능", "한국","미국 영화","해외","어워드 수상","인디","어린이 & 가족","애니메이션","코미디","호러","스릴러","SF","판타지"]
     @Binding var iscategoryClicked : Bool
-    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
        
         ZStack{
@@ -20,28 +19,10 @@ struct CategoryselectionView: View {
                 LazyVStack(pinnedViews: [.sectionFooters]){
                     Section(footer: Footer(iscategoryClicked: $iscategoryClicked)){
                     ForEach(categoryList,id:\.self){ category in
-                        Button{
-                            viewModel.getmoviePoster2()
-                            viewModel.getRowPoster12()
-                            viewModel.getRowPoster22()
-                            viewModel.getRowPoster32()
-                            viewModel.getRowPoster42()
-                            viewModel.getRowPoster52()
-                            viewModel.getRowPoster62()
-                            viewModel.getRowPoster72()
-                            viewModel.getRowPoster82()
-                            viewModel.getRowPoster92()
-                            withAnimation {
-                                iscategoryClicked.toggle()
-                            }
-                            
-                        }label: {
                             Text(category)
                                 .font(.title2)
                                 .foregroundColor(.gray)
                                 .padding()
-                        }
-                            
                     }
                 }
                 }

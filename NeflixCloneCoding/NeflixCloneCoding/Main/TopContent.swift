@@ -9,16 +9,13 @@ import SwiftUI
 
 struct TopContent: View {
     @Binding var iscategoryClicked : Bool
-    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         VStack(spacing : 0){
             HStack{
-                    Image("netflix")
-                        .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .padding()
-                
-                
+                Image("netflix")
+                    .resizable()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .padding()
                 Spacer()
                 Image(systemName: "airplayvideo")
                     .foregroundColor(Color.white)
