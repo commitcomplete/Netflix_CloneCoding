@@ -22,8 +22,11 @@
 		78AF38B2287A9FBC00BA81D4 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */; };
 		78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */; };
 		B919C987287DF5AA00EB9D42 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */; };
-		B919C989287DF62F00EB9D42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C988287DF62F00EB9D42 /* Storage.swift */; };
 		B919C98C287EB44D00EB9D42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919C98B287EB44D00EB9D42 /* Color.swift */; };
+		B9CE517D28857E53002034E0 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE517C28857E53002034E0 /* Storage.swift */; };
+		B9CE518228858DE1002034E0 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = B9CE518128858DE1002034E0 /* NavigationStack */; };
+		B9CE518428858E6B002034E0 /* ContentRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE518328858E6B002034E0 /* ContentRootView.swift */; };
+		B9CE5186288593BC002034E0 /* ContentInfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE5185288593BC002034E0 /* ContentInfomationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +47,10 @@
 		78AF38B1287A9FBC00BA81D4 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		78AF38B4287AB2D600BA81D4 /* RowMovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMovieList.swift; sourceTree = "<group>"; };
 		B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
-		B919C988287DF62F00EB9D42 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B919C98B287EB44D00EB9D42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B9CE517C28857E53002034E0 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B9CE518328858E6B002034E0 /* ContentRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRootView.swift; sourceTree = "<group>"; };
+		B9CE5185288593BC002034E0 /* ContentInfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInfomationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CE518228858DE1002034E0 /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,7 @@
 				B919C98A287EB41E00EB9D42 /* Extensions */,
 				78268A9D287016BC0099F75C /* Assets.xcassets */,
 				78268A9F287016BC0099F75C /* Preview Content */,
+				B9CE517C28857E53002034E0 /* Storage.swift */,
 			);
 			path = NeflixCloneCoding;
 			sourceTree = "<group>";
@@ -142,7 +149,9 @@
 		B919C985287DF58500EB9D42 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B9CE518328858E6B002034E0 /* ContentRootView.swift */,
 				B919C986287DF5AA00EB9D42 /* ContentDetailView.swift */,
+				B9CE5185288593BC002034E0 /* ContentInfomationView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -171,6 +180,9 @@
 			dependencies = (
 			);
 			name = NeflixCloneCoding;
+			packageProductDependencies = (
+				B9CE518128858DE1002034E0 /* NavigationStack */,
+			);
 			productName = NeflixCloneCoding;
 			productReference = 78268A96287016BB0099F75C /* NeflixCloneCoding.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +211,9 @@
 				Base,
 			);
 			mainGroup = 78268A8D287016BB0099F75C;
+			packageReferences = (
+				B9CE518028858DE1002034E0 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+			);
 			productRefGroup = 78268A97287016BB0099F75C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,7 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CE5186288593BC002034E0 /* ContentInfomationView.swift in Sources */,
 				78268A9C287016BB0099F75C /* ContentView.swift in Sources */,
+				B9CE518428858E6B002034E0 /* ContentRootView.swift in Sources */,
+				B9CE517D28857E53002034E0 /* Storage.swift in Sources */,
 				7821D5EC287EEAB200ACDF65 /* ViewModel.swift in Sources */,
 				78AF38B5287AB2D600BA81D4 /* RowMovieList.swift in Sources */,
 				78AF38AA287A9BA700BA81D4 /* MainPoster.swift in Sources */,
@@ -441,6 +459,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B9CE518028858DE1002034E0 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matteopuc/swiftui-navigation-stack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9CE518128858DE1002034E0 /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9CE518028858DE1002034E0 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78268A8E287016BB0099F75C /* Project object */;
 }
