@@ -12,8 +12,11 @@ struct NetflixMain: View {
     @State var iscategoryClicked = false
     
     @State private var showingSheet = false
+    //화면에 표시되는 리스트
+    var categoryList = ["액션","어드벤처", "SF","드라마","미스터리","판타지","오늘 대한민국의 Top 10 영화","스릴러","전기"]
+    //진짜 서치에 사용할 리스트
+    var realCategoryList = ["액션","어드벤처", "SF","드라마","미스터리","판타지","공포","스릴러","전기"]
     
-    var categoryList = ["미국 블록버스터 영화","심리 게임 영화","실화 바탕 영화","인디 영화","오늘 대한민국의 Top 10 영화","호러 영화"]
     init(){
         UITabBar.appearance().barTintColor = .black
         UITabBar.appearance().backgroundColor = .black
@@ -29,12 +32,13 @@ struct NetflixMain: View {
                         VStack{
                             Button{
                                 self.showingSheet.toggle()
+                                viewModel.detailMovieTitle =  viewModel.modelResultData.mainMovieTitle
                             }label: {
                                 MainPoster(posterName: "MainTitle",movieName: "Toy Story2")
                                      .padding(.bottom,80)
                             }
-                            ForEach(categoryList,id:\.self){category in
-                                RowMovieList(categoryName: category)
+                            ForEach(realCategoryList,id:\.self){category in
+                                RowMovieList(categoryName: category,isPresented: $showingSheet)
                             }
                             
                         }
@@ -46,8 +50,10 @@ struct NetflixMain: View {
                            
                               
                             
-                                Text("Toy Story2")
-                                    .font(.custom("BebasNeue", size: 80))
+                            Text(viewModel.modelResultData.mainMovieTitle)
+                                    .font(.custom("BebasNeue", size: 40))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.1)
                                     .foregroundColor(.white)
                                     .padding(.top,UIScreen.main.bounds.height * 0.2)
                             
@@ -107,9 +113,12 @@ struct NetflixMain: View {
                         
                     }
                 }
-                .sheet(isPresented: $showingSheet) {
+                .fullScreenCover(isPresented: $showingSheet) {
                          //sheet에 표시될 뷰를 할당
                     ContentRootView(showingSheet: $showingSheet)
+                        .onAppear(){
+                            viewModel.getdetailmoviePoster(titles: viewModel.detailMovieTitle)
+                        }
                         }
                 
             }
@@ -140,7 +149,20 @@ struct NetflixMain: View {
             CategoryselectionView(iscategoryClicked: $iscategoryClicked)
         }
         }
+        .onAppear(){
             
+            viewModel.getmoviePoster()
+            viewModel.getRowPoster1()
+            viewModel.getRowPoster2()
+            viewModel.getRowPoster3()
+            viewModel.getRowPoster4()
+            viewModel.getRowPoster5()
+            viewModel.getRowPoster6()
+            viewModel.getRowPoster7()
+            viewModel.getRowPoster8()
+            viewModel.getRowPoster9()
+            
+        }
         
        
     }

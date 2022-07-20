@@ -12,9 +12,8 @@ struct ContentRootView: View {
     @Binding var showingSheet: Bool
     @State private var isActive = false
     @State private var isModalPresented = false
-    
     var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 7), count: 3)
-    
+    @EnvironmentObject var viewModel: ViewModel
     var body: some View {
         NavigationStackView {
             ZStack {
@@ -24,13 +23,16 @@ struct ContentRootView: View {
                 ZStack(alignment: .topTrailing) {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 0) {
-                            Image("stll")
-                                .resizable()
+                            AsyncImage(url: URL(string: viewModel.detailMovieResultData.posterurl)) { image in
+                                    image.resizable()
+                                } placeholder: {
+                                    Color.gray
+                                }
                                 .scaledToFill()
                                 .frame(height: 220)
                                 .clipped()
                             
-                            Text("이상한 나라의 수학자")
+                            Text(viewModel.detailMovieTitle)
                                 .font(.system(size: 17, weight: .semibold))
                                 .fontWeight(.semibold)
                                 .padding(.horizontal, 10)
@@ -75,7 +77,7 @@ struct ContentRootView: View {
                             .padding(.horizontal, 10)
                             .padding(.top, 10)
                             
-                            Text("학업과 재정 측면에서 어려움을 겪고 있는 학생. 학교 경비원에게 수학을 가르쳐 달라고 요청한다. 그리고 성적보다 훨씬 더 많은 것을 얻게 되는데.")
+                            Text(viewModel.detailMovieResultData.plot)
                                 .font(.system(size: 13))
                                 .padding(.horizontal, 10)
                                 .padding(.top, 16)
@@ -85,7 +87,7 @@ struct ContentRootView: View {
                                     .font(.system(size: 11))
                                     .foregroundColor(.secondary)
                                 
-                                Text("최민식, 김동회, 박병은 ...")
+                                Text("\(viewModel.detailMovieResultData.actor1), \(viewModel.detailMovieResultData.actor2), \(viewModel.detailMovieResultData.actor3) ...")
                                     .font(.system(size: 11))
                                     .foregroundColor(.secondary)
                                 
@@ -106,7 +108,7 @@ struct ContentRootView: View {
                                     .font(.system(size: 11))
                                     .foregroundColor(.secondary)
                                 
-                                Text("박동훈")
+                                Text(viewModel.detailMovieResultData.directors)
                                     .font(.system(size: 11))
                                     .foregroundColor(.secondary)
                             }
@@ -163,13 +165,16 @@ struct ContentRootView: View {
                             .padding(.top, 16)
                             
                             LazyVGrid(columns: columns, spacing: 7) {
-                                ForEach((0...5), id: \.self) { _ in
+                                ForEach(viewModel.detailRow.mainPosterUrl.indices, id: \.self) { index in
                                     Button(action: {
                                         self.isActive.toggle()
                                     },label: {
                                         PushView(destination: ContentDetailView(showingSheet: $showingSheet), isActive: $isActive) {
-                                            Image("MainPoster")
-                                                .resizable()
+                                            AsyncImage(url: URL(string: viewModel.detailRow.mainPosterUrl[index])) { image in
+                                                    image.resizable()
+                                                } placeholder: {
+                                                    Color.gray
+                                                }
                                                 .cornerRadius(4)
                                                 .frame(height: 174)
                                         }
