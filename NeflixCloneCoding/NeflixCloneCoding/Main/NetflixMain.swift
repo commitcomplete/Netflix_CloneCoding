@@ -32,12 +32,13 @@ struct NetflixMain: View {
                         VStack{
                             Button{
                                 self.showingSheet.toggle()
+                                viewModel.detailMovieTitle =  viewModel.modelResultData.mainMovieTitle
                             }label: {
                                 MainPoster(posterName: "MainTitle",movieName: "Toy Story2")
                                      .padding(.bottom,80)
                             }
                             ForEach(realCategoryList,id:\.self){category in
-                                RowMovieList(categoryName: category)
+                                RowMovieList(categoryName: category,isPresented: $showingSheet)
                             }
                             
                         }
@@ -112,9 +113,12 @@ struct NetflixMain: View {
                         
                     }
                 }
-                .sheet(isPresented: $showingSheet) {
+                .fullScreenCover(isPresented: $showingSheet) {
                          //sheet에 표시될 뷰를 할당
                     ContentRootView(showingSheet: $showingSheet)
+                        .onAppear(){
+                            viewModel.getdetailmoviePoster(titles: viewModel.detailMovieTitle)
+                        }
                         }
                 
             }

@@ -16,10 +16,10 @@ struct Result :Codable{
     var titleOrg   : String?    = nil
     var titleEtc   : String?    = nil
     var prodYear   : String?    = nil
-    
+    var directors : Directors? = Directors()
     var nation     : String?    = nil
     var company    : String?    = nil
-    
+    var plots     : Plots?     = Plots()
     var runtime    : String?    = nil
     var rating     : String?    = nil
     var genre      : String?    = nil
@@ -52,4 +52,5 @@ struct Result :Codable{
     var modDate    : String?    = nil
     
     var ALIAS      : String?    = nil
+    var actors    : Actors?    = Actors()
 }

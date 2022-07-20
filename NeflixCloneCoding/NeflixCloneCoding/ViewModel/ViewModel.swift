@@ -23,9 +23,15 @@ class ViewModel : ObservableObject{
     @Published var rowMovieData8 = RowMovieData()
     @Published var rowMovieData9 = RowMovieData()
     
+    @Published var detailMovieTitle = ""
+    @Published var detailMovieResultData = DetailResultData()
+    
+    @Published var detailCategory = ""
+    @Published var detailRow = RowMovieData()
+    
     func loadData(completionHandler: @escaping (_ data:ResultData)->Void) {
         var resultData = ResultData()
-        var urlString = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&ServiceKey=1Q1WI0Q207J726GV3U9B&listCount=3&releaseDts=2017"
+        var urlString = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&ServiceKey=1Q1WI0Q207J726GV3U9B&listCount=3&releaseDts=2016"
         
         let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         guard let url = URL(string: encodedString ) else {
@@ -71,8 +77,7 @@ class ViewModel : ObservableObject{
     }
     
     
-    
-    func loadRowData(category : String , completionHandler: @escaping (_ data:RowMovieData)->Void) {
+        func loadRowData(category : String , completionHandler: @escaping (_ data:RowMovieData)->Void) {
         var resultData = RowMovieData()
         var urlString = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=1Q1WI0Q207J726GV3U9B&detail=Y&listCount=17&releaseDts=2017&genre="
         urlString += category
@@ -206,7 +211,6 @@ class ViewModel : ObservableObject{
         
         print(rowMovieData1.mainPosterUrl.count)
     }
-    
     
     //카테고리 변경을 위한 함수들
     func loadRowData2(category : String , completionHandler: @escaping (_ data:RowMovieData)->Void) {
@@ -391,7 +395,73 @@ class ViewModel : ObservableObject{
             }
         }
     }
-}
+    
+    func getdetailmoviePoster(titles:String){
+        loadData3(title:titles) { [weak self] data in
+            DispatchQueue.main.async {
+                self?.detailMovieResultData = data
+            }
+        }
+    }
+    
+    //디테일 뷰 영화 정보를 받아오기 위한 함수
+    func loadData3(title : String,completionHandler: @escaping (_ data:DetailResultData)->Void) {
+        var resultData = DetailResultData()
+        var urlString = "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=1Q1WI0Q207J726GV3U9B&detail=Y&listCount=1&title="
+        urlString += title
+        let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        guard let url = URL(string: encodedString ) else {
+            print(encodedString)
+            fatalError("Invalid URL")
+        }
 
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("error")
+                return
+            }
+            let result = try? JSONDecoder().decode(MovieData.self, from: data)
+            if let result = result {
+                
+                result.Data?.forEach {
+                    self.imageurlArr =  ($0.Result?[0].posters?.components(separatedBy : "|"))!
+                    print($0.Result?[0].posters)
+                    print($0.TotalCount)
+                    resultData.posterurl = self.imageurlArr[0]
+                    resultData.title = ($0.Result?[0].title)!
+                    resultData.directors = ($0.Result?[0].directors?.director![0].directorNm)!
+                    resultData.actor1 = ($0.Result?[0].actors?.actor![0].actorNm)!
+                    resultData.actor2 = ($0.Result?[0].actors?.actor![1].actorNm)!
+                    resultData.actor3 = ($0.Result?[0].actors?.actor![2].actorNm)!
+                    resultData.plot = ($0.Result?[0].plots?.plot![0].plotText)!
+//                    resultData.genre = ($0.Result?[0].genre[0])
+//                    resultData.categories = ($0.Result?[1].genre?.components(separatedBy : ","))!
+                    
+                }
+                completionHandler(resultData)
+                print(self.imageurlArr[0])
+//                print(resultData.mainPosterUrl)
+//                print(resultData.mainMovieTitle)
+//                print(resultData.categories[0])
+            }
+            
+            
+        }.resume()
+        
+    }
+
+    
+    
+    func getDetailRow(categorys : String){
+        loadRowData2(category : categorys) { [weak self] data in
+            DispatchQueue.main.async {
+                self?.detailRow = data
+            }
+        }
+        
+       
+    }
+    
+}
 
 
